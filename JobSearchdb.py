@@ -83,14 +83,14 @@ class JobSearchdb:
         print(f">>> Currently displaying {table_to_show} table")
         return self.query(f"SELECT * FROM {table_to_show};")
     
-    def create_df(self ,test = False):
+    def create_df(self ):
         """
         Creates a pandas.DataFrame object from the db.
 
         RETURNS: pandas.DataFrame
         """
 
-        if not self.test or not test:
+        if self.test:
             table = self.__test_table
             print(">>> Using test table")
         else:
